@@ -1,0 +1,15 @@
+{
+      "name": "Simple YouTube Downloader",
+      "version": "0.1",
+      "description": "Fast youtube downloader",
+      "author": "Mateusz Kropidlowski", 
+      "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/watch*"],
+            "js": ["src/loader.js"]
+        }
+      ],
+      "web_accessible_resources": ["src/youtubedl.js"],
+      "manifest_version": 2
+
+}
