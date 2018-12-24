@@ -3,13 +3,22 @@
       "version": "0.1",
       "description": "Fast youtube downloader",
       "author": "Mateusz Kropidlowski", 
+      "web_accessible_resources": ["src/youtubedl.js"],
       "content_scripts": [
         {
             "matches": ["https://www.youtube.com/watch*"],
-            "js": ["src/loader.js"]
+            "js": ["src/loader.js"],
+            "css": ["src/dropdownstyle.css"]
         }
       ],
-      "web_accessible_resources": ["src/youtubedl.js"],
+      "permissions":[
+        "https://youtube.com/*",
+        "downloads",
+        "tabs"
+      ],
+      "background":{
+        "scripts": ["src/background.js"]
+      },
       "manifest_version": 2
 
 }
