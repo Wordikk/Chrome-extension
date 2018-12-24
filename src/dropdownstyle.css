@@ -4,8 +4,8 @@
     width: 200px;
     z-index: 9999;
     background: var(--yt-main-app-background-tmp);
-    margin-left: 240px;
-    margin-top: 45px;
+    margin-left: 350px;
+    margin-top: 44px;
     display: none;
 }
 
@@ -16,7 +16,10 @@
     background: var(--yt-main-app-background-tmp);
     border: none;
     color: #990000;
+    font-size: 1.3rem;
     font-weight: 600;
+    letter-spacing: .007px;
+    padding-bottom: 5px;
 }
 #videoDownloadDropdown a {
     display: block;
@@ -24,7 +27,6 @@
     color: #990000;
     text-decoration: none;
     font-size: 21px;
-    
 }
 #videoDownloadDropdown a:hover{
     background: var(--yt-spec-10-percent-layer);

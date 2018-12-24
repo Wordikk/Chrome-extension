@@ -24,44 +24,45 @@ function downloadURI(event){
     return false;
 };
 
-window.onload = function() {
-    var videoURL = window.ytplayer.config.args.url_encoded_fmt_stream_map.split(",").map(function(item){
-        return item.split("&").reduce(function(pre, cur){
 
-            cur = cur.split("=");
+window.ondblclick = function() {
+            var videoURL = window.ytplayer.config.args.url_encoded_fmt_stream_map.split(",").map(function(item){
+                return item.split("&").reduce(function(pre, cur){
 
-            return Object.assign(pre, {[cur[0]]: decodeURIComponent(cur[1])});
-        }, {});
+                    cur = cur.split("=");
 
-    });
+                    return Object.assign(pre, {[cur[0]]: decodeURIComponent(cur[1])});
+                }, {});
 
-    console.log("Our extension has loaded.", videoURL);
+            });
 
-    var cont = document.getElementById("top-level-buttons");
+            console.log("Our extension has loaded.", videoURL);
 
-    var btn = document.createElement("button");
-    btn.className = "style-scope ytd-menu-renderer force-icon-button style-default size-default";
-    btn.setAttribute("role", "button");
-    btn.setAttribute("id", "downloadVideo");
-    btn.innerText = "Download";
+            var cont = document.getElementById("top-level-buttons");
 
-    var dropdown = document.createElement("div");
-    dropdown.id = "videoDownloadDropdown";
+            var btn = document.createElement("button");
+            btn.className = "style-scope ytd-menu-renderer force-icon-button style-default size-default";
+            btn.setAttribute("role", "button");
+            btn.setAttribute("id", "downloadVideo");
+            btn.innerText = "DOWNLOAD";
 
-    var dropList = document.createElement("ul");
+            var dropdown = document.createElement("div");
+            dropdown.id = "videoDownloadDropdown";
 
-    cont.appendChild(dropdown);
-    dropdown.appendChild(dropList);
-    cont.appendChild(btn);
+            var dropList = document.createElement("ul");
 
-    for (i in videoURL){
-        var item = document.createElement("a");
-        item.innerText = videoURL[i]["quality"];
+            cont.appendChild(dropdown);
+            dropdown.appendChild(dropList);
+            cont.appendChild(btn);
 
-        item.setAttribute("href", videoURL[i]["url"]);
-        item.setAttribute("data-type", videoURL[i]["type"]);
-        item.addEventListener("click", downloadURI);
-        dropList.appendChild(item);
-    }
-    btn.addEventListener("click", videoDownload);
+            for (i in videoURL){
+                var item = document.createElement("a");
+                item.innerText = videoURL[i]["quality"];
+
+                item.setAttribute("href", videoURL[i]["url"]);
+                item.setAttribute("data-type", videoURL[i]["type"]);
+                item.addEventListener("click", downloadURI);
+                dropList.appendChild(item);
+            }
+            btn.addEventListener("click", videoDownload);   
 }

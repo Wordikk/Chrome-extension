@@ -19,6 +19,11 @@
       "background":{
         "scripts": ["src/background.js"]
       },
+      "icons": { 
+        "16": "icons/16icon.png",
+        "48": "icons/48icon.png",
+       "128": "icons/128icon.png" 
+      },
       "manifest_version": 2
 
 }
