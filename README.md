@@ -1,2 +1,3 @@
 # Chrome-extension
-## Easy YouTube downloader work in progress.
+## Easy YouTube downloader.
+Its working after double clicking in youtube window.
