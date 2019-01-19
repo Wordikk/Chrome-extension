@@ -1,29 +1,38 @@
 {
-      "name": "Simple YouTube Downloader",
-      "version": "0.1",
-      "description": "Fast youtube downloader",
-      "author": "Mateusz Kropidlowski", 
-      "web_accessible_resources": ["src/youtubedl.js"],
-      "content_scripts": [
-        {
-            "matches": ["https://www.youtube.com/watch*"],
-            "js": ["src/loader.js"],
-            "css": ["src/dropdownstyle.css"]
-        }
-      ],
-      "permissions":[
-        "https://youtube.com/*",
-        "downloads",
-        "tabs"
-      ],
-      "background":{
-        "scripts": ["src/background.js"]
-      },
-      "icons": { 
-        "16": "icons/16icon.png",
-        "48": "icons/48icon.png",
-       "128": "icons/128icon.png" 
-      },
-      "manifest_version": 2
-
+    "name": "Simple YouTube Downloader",
+    "version": "0.1",
+    "description": "Fast youtube downloader",
+    "author": "Mateusz Kropidlowski",
+    "web_accessible_resources": [
+      "src/youtubedl.js"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.youtube.com/watch*"
+        ],
+        "js": [
+          "src/loader.js"
+        ],
+        "css": [
+          "src/dropdownstyle.css"
+        ]
+      }
+    ],
+    "permissions": [
+      "https://youtube.com/*",
+      "downloads",
+      "tabs"
+    ],
+    "background": {
+      "scripts": [
+        "src/background.js"
+      ]
+    },
+    "icons": {
+      "16": "icons/16icon.png",
+      "48": "icons/48icon.png",
+      "128": "icons/128icon.png"
+    },
+    "manifest_version": 2
 }

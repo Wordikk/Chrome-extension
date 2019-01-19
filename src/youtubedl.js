@@ -65,4 +65,4 @@ window.ondblclick = function() {
                 dropList.appendChild(item);
             }
             btn.addEventListener("click", videoDownload);   
-}
+};

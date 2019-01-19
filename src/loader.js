@@ -4,7 +4,7 @@ s.src = chrome.extension.getURL("src/youtubedl.js");
 
 s.onload = function () {
     this.remove();
-}
+};
 
 document.head.appendChild(s);
 
@@ -16,4 +16,4 @@ window.addEventListener("message", function (e) {
     chrome.runtime.sendMessage({name: fn, url: e.data.url}, function (res) {
         console.log(res);
     });
-})
+});
